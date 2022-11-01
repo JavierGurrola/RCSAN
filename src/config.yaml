@@ -1,0 +1,56 @@
+---
+model:
+  channels: 3
+  base filters: 64
+  dense convolutions: 5
+  global residual learning: true
+  attention: true
+  scale factor: true
+train:
+  patch size: 48     # Patch size according to LR image
+  epochs: 1000
+  samples per epoch: 16000
+  batch size: 16
+  learning rate: 1.e-4
+  momentum: 0.9
+  weight decay: 1.e-5
+  step decay: 200
+  gamma decay: 0.5
+  dataset path:   # Considering '../../Datasets' as the root path to all the datasets
+    - '../../Datasets/DIV2K/DIV2K_train_HR'
+    - '../../Datasets/Flickr2K/Flickr2K_HR'
+  device: cuda:0
+  checkpoint path: '../checkpoints'
+  workers: 10
+  verbose: true
+  # scale range: 4.0  # single scale
+  scale range:        # multi scale
+    - 1.1
+    - 4.0
+val:
+  dataset path:
+    - '../../Datasets/DIV2K/DIV2K_valid_HR'
+  patch size: 128
+  frequency: 1
+  batch size: 16
+  scale factors:
+    - 2
+    - 4
+test:
+  device: cuda
+  dataset path: '../../Datasets/'
+  test datasets:
+    - 'Set5'
+    - 'Set14'
+    - 'BSDS100'
+    - 'Urban100'
+    - 'Manga109'
+  scale factors:
+    - 2
+    - 3
+    - 4
+  multi scale: true
+  results path: '../results'
+  model path: '../pretrained'
+  save images: false
+...
