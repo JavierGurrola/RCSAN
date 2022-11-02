@@ -33,11 +33,6 @@ If you use this paper work in your research or work, please cite our paper:
 - scikit-image 0.17.2
 - PyYaml 5.3.1
 
-## Pre-trained model and datasets
-Pre-trained models are placed in this [folder](https://github.com/JavierGurrola/RCSAN/blob/main/pretrained).
-
-[Here](https://drive.google.com/drive/folders/1XTi4AFNVTPSIB2ZcKg6h8tB_oo6cOSsC?usp=sharing) you can download the datasets and training/testing partitions used in this work.
-
 
 ## Training
 
@@ -63,7 +58,9 @@ To train the model use the following command:
 
 ```python main_train.py```
 
-## Test
+## Test and pre-trained models
+
+Pre-trained models are available in this [link](https://drive.google.com/drive/folders/1FXHVRwYbwez7b3f0f_feE692aBWb2myr?usp=sharing). You can download and put them in the pre-trained folder.
 
 To test the model use the following command:
 
